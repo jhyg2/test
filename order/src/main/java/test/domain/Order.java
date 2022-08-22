@@ -72,6 +72,8 @@ public class Order  {
 
 
 
+    public void accept(){
+    }
 
 
 
