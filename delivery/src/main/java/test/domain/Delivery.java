@@ -1,50 +1,80 @@
 package test.domain;
 
-import java.util.Date;
-import java.util.List;
-import javax.persistence.*;
-import lombok.Data;
-import test.DeliveryApplication;
-import test.domain.DeliveryCancelled;
 import test.domain.DeliveryStarted;
+import test.domain.DeliveryCancelled;
+import test.DeliveryApplication;
+import javax.persistence.*;
+import java.util.List;
+import lombok.Data;
+import java.util.Date;
 
 @Entity
-@Table(name = "Delivery_table")
+@Table(name="Delivery_table")
 @Data
-public class Delivery {
 
+public class Delivery  {
+
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    
+    
+    
+    
+    
     private Long id;
-
+    
+    
+    
+    
+    
     private Long orderId;
-
+    
+    
+    
+    
+    
     private Long productId;
-
+    
+    
+    
+    
+    
     private String productName;
-
+    
+    
+    
+    
+    
     private String deliveryStatus;
 
     @PostPersist
-    public void onPostPersist() {
+    public void onPostPersist(){
+
+
         DeliveryStarted deliveryStarted = new DeliveryStarted(this);
         deliveryStarted.publishAfterCommit();
-    }
 
+    }
     @PreRemove
-    public void onPreRemove() {
+    public void onPreRemove(){
+
+
         DeliveryCancelled deliveryCancelled = new DeliveryCancelled(this);
         deliveryCancelled.publishAfterCommit();
+
     }
 
-    public static DeliveryRepository repository() {
-        DeliveryRepository deliveryRepository = DeliveryApplication.applicationContext.getBean(
-            DeliveryRepository.class
-        );
+    public static DeliveryRepository repository(){
+        DeliveryRepository deliveryRepository = DeliveryApplication.applicationContext.getBean(DeliveryRepository.class);
         return deliveryRepository;
     }
 
-    public static void startDelivery(OrderPlaced orderPlaced) {
+
+
+
+    public static void startDelivery(OrderPlaced orderPlaced){
+
         /** Example 1:  new item 
         Delivery delivery = new Delivery();
         repository().save(delivery);
@@ -62,9 +92,10 @@ public class Delivery {
          });
         */
 
+        
     }
+    public static void deleteDelivery(OrderCancelled orderCancelled){
 
-    public static void deleteDelivery(OrderCancelled orderCancelled) {
         /** Example 1:  new item 
         Delivery delivery = new Delivery();
         repository().save(delivery);
@@ -82,5 +113,8 @@ public class Delivery {
          });
         */
 
+        
     }
+
+
 }

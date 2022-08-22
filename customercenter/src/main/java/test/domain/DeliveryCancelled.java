@@ -1,8 +1,8 @@
 package test.domain;
 
-import java.util.Date;
-import lombok.Data;
 import test.infra.AbstractEvent;
+import lombok.Data;
+import java.util.Date;
 
 @Data
 public class DeliveryCancelled extends AbstractEvent {

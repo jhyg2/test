@@ -1,20 +1,21 @@
 package test.domain;
 
-import java.util.Date;
-import java.util.List;
 import javax.persistence.*;
+import java.util.List;
+import java.util.Date;
 import lombok.Data;
 
 @Entity
-@Table(name = "MyPage_table")
+@Table(name="MyPage_table")
 @Data
 public class MyPage {
 
-    @Id
-    //@GeneratedValue(strategy=GenerationType.AUTO)
-    private Long orderId;
+        @Id
+        //@GeneratedValue(strategy=GenerationType.AUTO)
+        private Long orderId;
+        private String productId;
+        private String deliveryStatus;
+        private String orderStatus;
 
-    private String productId;
-    private String deliveryStatus;
-    private String orderStatus;
+
 }

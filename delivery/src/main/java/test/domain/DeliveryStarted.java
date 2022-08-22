@@ -1,9 +1,9 @@
 package test.domain;
 
-import java.util.*;
-import lombok.*;
 import test.domain.*;
 import test.infra.AbstractEvent;
+import java.util.*;
+import lombok.*;
 
 @Data
 @ToString
@@ -15,11 +15,10 @@ public class DeliveryStarted extends AbstractEvent {
     private String productName;
     private String deliveryStatus;
 
-    public DeliveryStarted(Delivery aggregate) {
+    public DeliveryStarted(Delivery aggregate){
         super(aggregate);
     }
-
-    public DeliveryStarted() {
+    public DeliveryStarted(){
         super();
     }
     // keep

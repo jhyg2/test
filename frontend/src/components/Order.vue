@@ -159,7 +159,7 @@
 
                 } catch(e) {
                     this.snackbar.status = true
-                    if(e.response.data.message) {
+                    if(e.response && e.response.data.message) {
                         this.snackbar.text = e.response.data.message
                     } else {
                         this.snackbar.text = e
@@ -181,7 +181,7 @@
 
                 } catch(e) {
                     this.snackbar.status = true
-                    if(e.response.data.message) {
+                    if(e.response && e.response.data.message) {
                         this.snackbar.text = e.response.data.message
                     } else {
                         this.snackbar.text = e

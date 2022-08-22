@@ -1,9 +1,9 @@
 package test.domain;
 
-import java.util.*;
-import lombok.*;
 import test.domain.*;
 import test.infra.AbstractEvent;
+import java.util.*;
+import lombok.*;
 
 @Data
 @ToString
@@ -15,11 +15,10 @@ public class OrderCancelled extends AbstractEvent {
     private String productName;
     private String orderStatus;
 
-    public OrderCancelled(Order aggregate) {
+    public OrderCancelled(Order aggregate){
         super(aggregate);
     }
-
-    public OrderCancelled() {
+    public OrderCancelled(){
         super();
     }
     // keep

@@ -1,12 +1,10 @@
 package test.domain;
 
+import test.domain.*;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import test.domain.*;
 
-@RepositoryRestResource(
-    collectionResourceRel = "deliveries",
-    path = "deliveries"
-)
-public interface DeliveryRepository
-    extends PagingAndSortingRepository<Delivery, Long> {}
+@RepositoryRestResource(collectionResourceRel="deliveries", path="deliveries")
+public interface DeliveryRepository extends PagingAndSortingRepository<Delivery, Long>{
+
+}
